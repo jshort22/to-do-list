@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main>
+      <section id="main-container" class="container">
+        <div class="header-container">
+          <div class="task-header">Tasks</div>
+          <div class="priority-header">Priority</div>
+        </div>
+        <div id="task-container" class="task-container">
+        </div>
+        <div class="btn-container">
+          <button id="delete-btn" class="btn">Delete Task</button>
+          <button id="add-btn" class="btn">Add Task</button>
+        </div>
+      </section>
+      <section id="add-task-container" class="container hidden">
+        <div id="input-container" class="input-container">
+          <label for="new-input">Add a new task below</label>
+          <textarea required id="new-input"></textarea>
+          <label for="priority">Priority</label>
+          <select id="priority">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+        <div class="btn-container">
+          <button id="go-back-btn" class="btn">Go Back</button>
+          <button id="add-btn-submit" class="btn">Add Task</button>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
