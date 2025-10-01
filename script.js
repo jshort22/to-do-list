@@ -39,14 +39,13 @@ function handleDelete() {
   const taskList = getTasks()
   const taskContainer = document.getElementById("task-container")
   const selected = document.querySelector("#task-container div .radio-span:checked")
-  const selectedInput = selected.nextElementSibling
-  if (selected) {
-    selected.parentElement.remove()
-    const selectedItem = taskList.filter(task => task.task === selectedInput.id)
-    const index = taskList.indexOf(selectedItem)
-    taskList.splice(index, 1)
-    localStorage.setItem("tasks", JSON.stringify(taskList)) 
-  }  
+  if (!selected) return 
+  const index = taskList.findIndex(task => task.task === selected.id)
+  if (index === -1) return
+  taskList.splice(index, 1)
+  localStorage.setItem("tasks", JSON.stringify(taskList)) 
+  selected.parentElement.remove()
+  
 }
 
 function buildTasks() {
@@ -83,5 +82,4 @@ document.getElementById("add-btn-submit").addEventListener("click", () => {
 document.getElementById("delete-btn").addEventListener("click", () => {
   handleDelete()
 })
-
 
